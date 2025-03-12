@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Table</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+            font-size: 18px;
+        }
+        td {
+            font-size: 16px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .highlight {
+            background-color: #f9c74f;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+        </tr>
+        <tr>
+            <td rowspan="3" class="bold">Cell 1</td>
+            <td class="bold">Cell 2</td>
+            <td class="highlight bold">Cell 3</td>
+        </tr>
+        <tr>
+            <td>Cell 5</td>
+            <td>Cell 6</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="highlight bold">Cell 7</td>
+        </tr>
+    </table>
+
+</body>
+</html>
