@@ -1,63 +1,714 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Table</title>
+    <title>Motorhomes</title>
     <style>
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin: 20px auto;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        th, td {
-            border: 2px solid black;
-            padding: 10px;
+        
+        body {
+            background-color: #FEFAE0;
+            color: #283618; 
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #FEFAE0;
+        }
+        
+        img {
+            max-width: 450px;
+            max-height: 500px;
+            display: block;
+        }
+        
+        section {
+            width: 100%;
+        }
+        
+        .divider {
+            width: 100%;
+            height: 3px;
+            background-color: #283618;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: clamp(20px, 4vw, 28px);
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-size: clamp(18px, 3vw, 24px);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        header {
+            background-color: #D0975D;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: clamp(16px, 2.5vw, 22px);
+            color: #FEFAE0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin-left: 15px;
+        }
+        
+        nav ul li a {
+            color: #FEFAE0;
+            text-decoration: none;
+            font-size: clamp(12px, 1.8vw, 16px);
+            white-space: nowrap;
+        }
+        
+        .social-icons {
+            display: flex;
+        }
+        
+        .social-icons a {
+            color: #FEFAE0;
+            margin-right: 10px;
+            text-decoration: none;
+            font-size: clamp(14px, 2vw, 18px);
+        }
+
+        .hero {
+            background-color: #E7BC85;
+            padding: 30px 5% 80px;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-image {
+            width: 450px;
+            height: auto;
+            max-height: 500px;
+            margin: 0 auto 20px;
+        }
+        
+        .hero-image img {
+            width: 450px;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            width: 50%;
+            color: #FEFAE0;
             text-align: center;
         }
-        th {
-            background-color: #ddd;
-            font-size: 18px;
+        
+        .cta-button {
+            background-color: #606C38;
+            color: #FEFAE0;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: clamp(14px, 1.8vw, 16px);
         }
-        td {
-            font-size: 16px;
+        .cta-button:hover {
+    background-color: #283618;
+}
+        
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #E7BC85;
+            border-radius:0 0 100% 100% ;
         }
-        .bold {
+ 
+        .section {
+            padding: 40px 5%;
+        }
+        
+        .how-it-works {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .how-it-works-content {
+            width: 100%;
+            max-width: 600px;
+            flex: 1 1 300px;
+        }
+        
+        .how-it-works-image {
+            width: 100%;
+            max-width: 400px;
+            flex: 1 1 250px;
+        }
+        
+        .how-it-works-image img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        .testimonials-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .testimonials-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            gap: 15px;
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+        
+        .testimonials-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-card {
+            min-width: 250px;
+            flex: 1 0 calc(33.333% - 15px);
+            background-color: #E7BC85;
+            padding: 15px;
+            border-radius: 10px;
+            scroll-snap-align: start;
+        }
+        
+        .testimonial-stars {
+            color: #E7BC85;
+            margin-bottom: 10px;
+            font-size: clamp(12px, 1.8vw, 16px);
+        }
+        
+        .testimonial-text {
+            font-size: clamp(13px, 1.6vw, 15px);
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .testimonial-read-more {
+            font-size: clamp(11px, 1.4vw, 14px);
+            text-decoration: none;
+            color: #FEFAE0;
+        }
+        
+        .slider-nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        
+        .slider-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #606C38;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .slider-dot.active {
+            background-color: #000000;
+        }
+        
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #606C38;
+            cursor: pointer;
+            z-index: 10;
+            background-color: #FEFAE0(255,255,255,0.7);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .prev-arrow {
+            left: 5px;
+        }
+        
+        .next-arrow {
+            right: 5px;
+        }
+  
+        .rv-types {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .rv-card {
+            width: 100%;
+            max-width: 360px;
+            flex: 1 1 280px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .rv-card img {
+            width: 360px;
+            border-radius: 10px 10px 0 0;
+            height: 276px;
+            object-fit: cover;
+        }
+        
+        .rv-card-content {
+            background-color: #E7BC85;
+            padding: 15px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .rv-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .rv-card-title {
+            font-weight: bold;
+            color: #FEFAE0;
+            font-size: clamp(15px, 2vw, 18px);
+        }
+        
+        .rv-card-arrow {
+            color: #FEFAE0;
+            text-decoration: none;
+        }
+        
+        .rv-card-description {
+            font-size: clamp(13px, 1.6vw, 15px);
+            line-height: 1.4;
+        }
+
+        .faq-container {
+            margin-top: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: #606C38;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            color: #FEFAE0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .faq-question span {
+            font-size: clamp(14px, 1.8vw, 16px);
+        }
+        
+        .faq-question .icon {
+            font-size: 20px;
             font-weight: bold;
         }
-        .highlight {
-            background-color: #f9c74f;
+        
+        .faq-answer {
+            padding: 0 15px 15px;
+            font-size: clamp(13px, 1.6vw, 15px);
+            display: none;
+        }
+
+        .contacts {
+            background-color: #e0bb85;
+            color: #FEFAE0;
+            text-align: center;
+            padding: 30px 5% 80px;
+            position: relative;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px 20px;
+        }
+        
+        .contacts a {
+            color: #FEFAE0;
+            text-decoration: none;
+            padding: 5px;
+            font-size: clamp(14px, 1.8vw, 16px);
+        }
+
+        footer {
+            background-color: #D0975D;
+            padding: 15px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        footer nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 10px 15px;
+        }
+        
+        footer nav ul li a {
+            color: #FEFAE0;
+            text-decoration: none;
+            font-size: clamp(12px, 1.6vw, 14px);
+        }
+
+        @media screen and (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding-bottom: 60px;
+            }
+            
+            .hero-image {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+            
+            .hero-content {
+                width: 100%;
+            }
+            
+            .how-it-works {
+                flex-direction: column;
+            }
+            
+            .how-it-works-content, 
+            .how-it-works-image {
+                width: 100%;
+            }
+            
+            .testimonial-card {
+                min-width: 85%;
+                flex: 0 0 85%;
+            }
+            
+            .rv-card {
+                flex: 0 0 100%;
+            }
+            
+            header {
+                flex-wrap: wrap;
+            }
+            
+            header nav {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            header nav ul {
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .section {
+                padding: 30px 4%;
+            }
+            
+            .testimonial-card {
+                min-width: 95%;
+                flex: 0 0 95%;
+            }
+            
+            .faq-question span:first-child {
+                width: 85%;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+            
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            footer nav ul {
+                justify-content: center;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="logo">MH</div>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Main</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#types">Types</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-image">
+                <img src="hero-image.jpg" alt="_">
+            </div>
+            <div class="hero-content">
+                <h1>Hit the Road in Comfort – Find Your Perfect Motor Home Today!</h1>
+                <a href="#" class="cta-button">Order now</a>
+            </div>
+            <div class="wave"></div>
+        </section>
 
-    <nav>
-        <a href="Project6_Part1.html">First task</a>
-        <a href="Project6_Part2.html">Second task</a>
-        <a href="Project6_Part3.html">Third task</a>
-    </nav>
+        <section class="section">
+            <h2>How does it work?</h2>
+            <div class="how-it-works">
+                <div class="how-it-works-content">
+                    <p>Browse our selection of motor homes, choose the perfect one, and book easily with transparent pricing.</p>
+                    <p>Customize your rental with add-ons, pick it up or have it delivered, and hit the road with 24/7 support. After your trip, return the vehicle hassle-free and share your experience!</p>
+                </div>
+                <div class="how-it-works-image">
+                    <img src="how-it-works.jpg" alt="_">
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
+  
+        <section class="section" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonials-container">
+                <button class="slider-arrow prev-arrow" aria-label="Previous testimonial">❮</button>
+                <div class="testimonials-slider">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text">"Renting a motorhome through this site was the best decision for our family trip! The process was ..."</div>
+                        <div class="testimonial-read-more"><a href="#">Read more</a></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text">"I've always dreamed of exploring the country in a motorhome, and this service made it so easy..."</div>
+                        <div class="testimonial-read-more"><a href="#">Read more</a></div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-text">"Superb experience! The motorhome was spacious, well-equipped, and incredibly comfortable. Perfect for ..."</div>
+                        <div class="testimonial-read-more"><a href="#">Read more</a></div>
+                    </div>
+                </div>
+                <button class="slider-arrow next-arrow" aria-label="Next testimonial">❯</button>
+                <div class="slider-nav">
+                    <span class="slider-dot active" data-index="0"></span>
+                    <span class="slider-dot" data-index="1"></span>
+                    <span class="slider-dot" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
 
-    <table>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-        </tr>
-        <tr>
-            <td rowspan="3" class="bold">Cell 1</td>
-            <td class="bold">Cell 2</td>
-            <td class="highlight bold">Cell 3</td>
-        </tr>
-        <tr>
-            <td>Cell 5</td>
-            <td>Cell 6</td>
-        </tr>
-        <tr>
-            <td colspan="2" class="highlight bold">Cell 7</td>
-        </tr>
-    </table>
+        <section class="section" id="types">
+            <h2>Types</h2>
+            <div class="rv-types">
+                <div class="rv-card">
+                    <img src="class-a.jpg" alt="A">
+                    <div class="rv-card-content">
+                        <div class="rv-card-header">
+                            <div class="rv-card-title">Class A</div>
+                            <div class="rv-card-arrow"><a href="#">-></a></div>
+                        </div>
+                        <div class="rv-card-description">
+                            A spacious, bus-style RV perfect for long road trips and luxurious interiors, a full kitchen, bathroom, and ample storage. Ideal fortravelers who seek maximum comfort on the road.
+                        </div>
+                    </div>
+                </div>
+                <div class="rv-card">
+                    <img src="class-b.jpg" alt="B">
+                    <div class="rv-card-content">
+                        <div class="rv-card-header">
+                            <div class="rv-card-title">Class B</div>
+                            <div class="rv-card-arrow"><a href="#">-></a></div>
+                        </div>
+                        <div class="rv-card-description">
+                            A compact, fuel-efficient van with essential amenities, including a small kitchen, bed, and bathroom. Perfect for solo travelers or couples looking for easy maneuverability and parking.
+                        </div>
+                    </div>
+                </div>
+                <div class="rv-card">
+                    <img src="class-c.jpg" alt="C">
+                    <div class="rv-card-content">
+                        <div class="rv-card-header">
+                            <div class="rv-card-title">Class C</div>
+                            <div class="rv-card-arrow"><a href="#">-></a></div>
+                        </div>
+                        <div class="rv-card-description">
+                            A mid-sized RV with a distinctive over-cab sleeping area, offering a balance between comfort and affordability. Popular with families and easier to drive than a Class A.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="divider"></div>
 
+        <section class="section" id="faq">
+            <h2>Common Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need a special license to drive a motorhome?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>In most cases, a standard driver's license is sufficient for motorhomes under 26,000 pounds. However, regulations vary by location and vehicle size. We'll help you understand the specific requirements for your rental.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is included in a motorhome rental?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our standard rentals include kitchen equipment, bedding, basic cleaning supplies, and essential living items. Additional packages with camping gear, outdoor furniture, and premium amenities are available as add-ons.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I take the motorhome off-road?</span>
+                        <span class="icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most motorhomes are designed for paved roads and established campgrounds. Off-road use may void insurance coverage and potentially damage the vehicle. Some specialized models may be available for light off-road use - please inquire about these options.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="contacts" id="contacts">
+            <h2>Contacts</h2>
+            <div class="contact-info">
+                <a href="tel:+XXXXXXXXXXX">+XXXXXXXXXXX</a>
+                <a href="mailto:XXXXX@gmail.com">XXXXX@gmail.com</a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram">📷</i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook">📘</i></a>
+            </div>
+            <div class="wave"></div>
+        </section>
+
+        <footer>
+            <div class="logo">MH</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Main</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#types">Types</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+    
+    <script>
+  
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.icon');
+                const isOpen = answer.style.display === 'block';
+
+                document.querySelectorAll('.faq-answer').forEach(a => {
+                    a.style.display = 'none';
+                });
+                
+                document.querySelectorAll('.faq-question .icon').forEach(i => {
+                    i.textContent = '+';
+                });
+
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                }
+            });
+        });
+    
+    </script>
 </body>
 </html>

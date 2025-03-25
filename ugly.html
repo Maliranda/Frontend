@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugly Meme Page</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 20px;
+            box-sizing: content-box;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        
+        body {
+            background: repeating-linear-gradient(45deg, red, yellow, green 10px);
+            color: lime;
+            text-shadow: 2px 2px 0 black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            width: 80vw;
+            border: 10px dashed pink;
+            position: relative;
+        }
+
+        .header {
+            width: 120%;
+            height: 150px;
+            background: purple;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: -50px;
+            left: -20px;
+        }
+
+        .content {
+            background: cyan;
+            width: 300px;
+            height: 500px;
+            border: 5px solid magenta;
+            float: left;
+            position: sticky;
+            top: 30px;
+        }
+
+        .sidebar {
+            width: 60px;
+            height: 600px;
+            background: orange;
+            position: absolute;
+            right: 0;
+            top: 200px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 100px;
+            background: yellow;
+            border: 3px dotted blue;
+            transform: rotate(15deg);
+        }
+        
+        .box:nth-child(odd) {
+            background: pink;
+            transform: scale(1.5);
+        }
+        
+        .box:hover {
+            background: black;
+            color: white;
+            cursor: crosshair;
+        }
+        
+        .box::before {
+            content: '😵‍💫 '; 
+        }
+        
+        .box::after {
+            content: ' 💀';
+        }
+
+        @media (max-width: 800px) {
+            body {
+                background: radial-gradient(circle, blue, red);
+            }
+            .content {
+                width: 100%;
+                height: auto;
+                background: brown;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">WELCOME TO CHAOS</div>
+        <div class="content">Main Content</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+</body>
+</html>
