@@ -1,109 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ugly Meme Page</title>
-    <style>
-        * {
-            margin: 10px;
-            padding: 20px;
-            box-sizing: content-box;
-            font-family: 'Comic Sans MS', cursive;
-        }
-        body {
-                background: radial-gradient(circle, blue, red);
-            }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 80vw;
-            border: 10px dashed pink;
-            position: relative;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ugly Page Challenge</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: repeating-linear-gradient(45deg, red, yellow, green 10px);
+      background-size: 400% 400%;
+      animation: bgShift 5s infinite linear;
+      font-family: Comic Sans MS, cursive, sans-serif;
+    }
 
-        .header {
-            width: 120%;
-            height: 150px;
-            background: purple;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            position: absolute;
-            top: -50px;
-            left: -20px;
-        }
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        .content {
-            background: cyan;
-            width: 300px;
-            height: 400px;
-            border: 5px solid magenta;
-            float: left;
-            position: sticky;
-            top: 30px;
-            text-decoration: none;
-        }
+    h1 {
+      font-size: 4rem;
+      color: #ff0000;
+      text-shadow: 2px 2px 0 lime, -2px -2px 0 cyan;
+      animation: upDown 1s infinite ease-in-out alternate;
+    }
 
-        .sidebar {
-            width: 60px;
-            height: 500px;
-            background: orange;
-            position: absolute;
-            right: 0;
-            top: 200px;
-        }
-        
-        .box {
-            width: 200px;
-            height: 100px;
-            background: yellow;
-            border: 3px dotted blue;
-            transform: rotate(15deg);
-            margin-top: 30px;
-        }
-        
-        .box:nth-child(odd) {
-            background: pink;
-            transform: scale(1.2);
-        }
-        
-        .box:hover {
-            background: black;
-            color: white;
-            cursor: crosshair;
-        }
-        
-        .box::before {
-            content: '🚩 '; 
-        }
-        
-        .box::after {
-            content: ' 🚩';
-        }
+    @keyframes upDown {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(1000px); }
+    100% { transform: translateX(0); }
+}
 
-        @media (max-width: 800px) {
-            body {
-                background: radial-gradient(circle, blue, red);
-            }
-            .content {
-                width: 100%;
-                height: auto;
-                background: brown;
-            }
-        }
-    </style>
+    .wiggle {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, yellow, red);
+      animation: wiggle 0.3s infinite alternate;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+        display: flex;
+      top: 20%;
+      left: 40%;
+    }
+
+    @keyframes wiggle {
+      from { transform: rotate(0deg) scale(1); }
+      to { transform: rotate(50deg) scale(1.1); }
+    }
+
+    .rainbow-text {
+      font-size: 2rem;
+      animation: rainbow 1s linear infinite, pulseText 0.5s infinite alternate;
+      transition: all 0.3s ease;
+      padding: 10px;
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      20% { color: orange; }
+      40% { color: yellow; }
+      60% { color: green; }
+      80% { color: blue; }
+      100% { color: violet; }
+    }
+
+    @keyframes pulseText {
+      from { transform: scale(1); }
+      to { transform: scale(1.3) rotate(15deg); }
+    }
+
+    button {
+      background: red;
+      color: white;
+      font-size: 2rem;
+      padding: 20px;
+      border: 5px dashed cyan;
+      transition: all 0.2s ease-in-out;
+      animation: rotateZoom 1s infinite ease-in-out alternate;;
+    }
+
+    button:hover {
+      transform: rotate(150deg) scale(2);
+      background: lime;
+      color: black;
+    }
+
+    @keyframes rotateZoom {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: translateX(100px) translateY(100px) rotate(180deg) scale(1.2); }
+  75% { transform: translateX(200px) translateY(200px) rotate(270deg) scale(1.5); }
+  100% { transform: rotate(360deg) scale(1.5); }
+}
+
+    .crazy-box {
+      width: 150px;
+      height: 150px;
+      position: absolute;
+      top: 70%;
+      left: 60%;
+      background: repeating-linear-gradient(135deg, red, red 10px, yellow 10px, green 20px);
+      animation: spinMove 3s linear infinite, scaleColor 2s ease-in-out infinite;
+    }
+
+    @keyframes spinMove {
+      0% { transform: rotate(0deg) translateX(0); }
+      100% { transform: rotate(360deg) translateX(300px) translateY(-100px); }
+        50% { transform: rotate(180deg) translateX(150px) translateY(-50px); }
+    }
+
+   
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">🤡</div>
-        <div class="content"><a href="my.html">Click it</a></div>
-        <div class="sidebar">👾</div>
-        <div class="box">!</div>
-        <div class="box">!</div>
-        <div class="box">!</div>
-    </div>
+  <h1>WELCOME TO CHAOS👹</h1>
+  <div class="wiggle"><a href ="my.html" target="_blank"> ❌ </a></div>
+  <div class="crazy-box"></div>
+  <p class="rainbow-text">Try to read it😈.</p>
+  <button onclick="alert('Make it stop!')">Try to click...</button>
 </body>
 </html>

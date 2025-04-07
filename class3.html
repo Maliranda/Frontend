@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best.swamp</title>
+    <style>
+        *{box-sizing: border-box;
+        }
+        .card{
+            border: 1px solid black;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(17, 34, 0.10);
+        }
+        .card-image{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-description{
+            padding: 16px;
+        
+        }
+        .card-description-date{
+            color: grey;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            font-weight: 400;
+            margin: 0;
+            line-height: normal;
+            margin-bottom: 8px;
+
+        }
+        .card-description-button{
+            width: 100%;
+            background-color: greenyellow;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 16px;
+        }
+        .card-description-title{
+            color: black;
+            font-size: 35px;
+            font-weight: 24px;
+            margin: 0;
+            margin-bottom: 8px;
+        }
+        .card-description-button-title{
+            color: black;
+            margin: 0;
+        }
+        .card-image-container{
+            position: relative;
+        }
+        .card-icon-button{
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background-color: white;
+            border-radius: 100%;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-icon-button > p {
+            margin: 0;
+        }
+        .card-container{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 24px;
+            column-gap: 10px;
+        }
+        .navigation{
+            display: none;
+        }
+        .header{
+            box-shadow: 0px 4px 16px rgba(94, 94, 94, 0.1);
+            position: sticky;
+            top:0;
+            z-index: 10;
+            background-color: white;
+
+        }
+        @media screen and (min-width: 744px) {
+            .card-container{
+                flex-direction: unset;
+                flex-wrap: wrap;
+            }
+            .card{
+                width: calc(50% - 10px);
+            }
+            .navigation{
+                display: flex;
+                justify-content: space-between;
+                column-gap: 12px;
+            }
+        }
+        @media screen and (min-width: 1240px) {
+            .card-container{
+                flex-direction: unset;
+                flex-wrap: wrap;
+            }
+            .card{
+                width: calc(100%/3-10px);
+            }
+            
+        }
+   </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Best.swamp</h1>
+        <nav class="navigation">
+            <a href="">Home</a>
+            <a href="">Verification</a>
+            <a href="">Buy a property</a>
+            <a href="">FAQ</a>
+        </nav>
+            
+    </header> 
+    <main class="card-container"> 
+    <div class="card">
+        <div class="card-image-container">
+            <img  class="card-image" src="">
+            <div class="card-icon-button"><p>♡</p></div>
+        
+    </div>
+    <div class="card-description">
+        <h2 class="card-description-date">September 26, 2023</h2>
+        <h1 class="card-description-button-title">Apartment title</h1>
+        <button class="card-description-button">
+            <p class="card-description-button-title">Buy now</p>
+        </button>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-image-container">
+            <img  class="card-image" src="">
+            <div class="card-icon-button"><p>♡</p></div>
+        
+    </div>
+    <div class="card-description">
+        <h2 class="card-description-date">September 26, 2023</h2>
+        <h1 class="card-description-button-title">Apartment title</h1>
+        <button class="card-description-button">
+            <p class="card-description-button-title">Buy now</p>
+        </button>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-image-container">
+            <img  class="card-image" src="">
+            <div class="card-icon-button"><p>♡</p></div>
+        
+    </div>
+    <div class="card-description">
+        <h2 class="card-description-date">September 26, 2023</h2>
+        <h1 class="card-description-button-title">Apartment title</h1>
+        <button class="card-description-button">
+            <p class="card-description-button-title">Buy now</p>
+        </button>
+    </div>
+    </div>
+    <div class="card">
+        <div class="card-image-container">
+            <img  class="card-image" src="">
+            <div class="card-icon-button"><p>♡</p></div>
+        
+    </div>
+    <div class="card-description">
+        <h2 class="card-description-date">September 26, 2023</h2>
+        <h1 class="card-description-button-title">Apartment title</h1>
+        <button class="card-description-button">
+            <p class="card-description-button-title">Buy now</p>
+        </button>
+    </div>
+    </div>
+</main>  
+</body>
+</html>  

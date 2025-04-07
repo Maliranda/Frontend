@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugly Meme Page</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 20px;
+            box-sizing: content-box;
+            font-family: 'Comic Sans MS', cursive;
+        }
+        body {
+                background: radial-gradient(circle, blue, red);
+            }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80vw;
+            border: 10px dashed pink;
+            position: relative;
+        }
+
+        .header {
+            width: 120%;
+            height: 150px;
+            background: purple;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: -50px;
+            left: -20px;
+        }
+
+        .content {
+            background: cyan;
+            width: 300px;
+            height: 400px;
+            border: 5px solid magenta;
+            float: left;
+            position: sticky;
+            top: 30px;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            width: 60px;
+            height: 500px;
+            background: orange;
+            position: absolute;
+            right: 0;
+            top: 200px;
+        }
+        
+        .box {
+            width: 200px;
+            height: 100px;
+            background: yellow;
+            border: 3px dotted blue;
+            transform: rotate(15deg);
+            margin-top: 30px;
+        }
+        
+        .box:nth-child(odd) {
+            background: pink;
+            transform: scale(1.2);
+        }
+        
+        .box:hover {
+            background: black;
+            color: white;
+            cursor: crosshair;
+        }
+        
+        .box::before {
+            content: '🚩 '; 
+        }
+        
+        .box::after {
+            content: ' 🚩';
+        }
+
+        @media (max-width: 800px) {
+            body {
+                background: radial-gradient(circle, yellow, red);
+            }
+            .content {
+                width: 100%;
+                height: auto;
+                background: brown;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">🤡</div>
+        <div class="content"><a href="my.html">Click it</a></div>
+        <div class="sidebar">👾</div>
+        <div class="box">!</div>
+        <div class="box">!</div>
+        <div class="box">!</div>
+    </div>
+</body>
+</html>
