@@ -1,0 +1,17 @@
+$color-cream: #FEFAE0;
+$color-dark-green: #283618;
+$color-medium-green: #606C38;
+$color-light-brown: #D0975D;
+$color-medium-brown: #E7BC85;
+
+$breakpoint-sm: 481px;
+$breakpoint-md: 769px;
+
+$font-size-base: 16px;
+$font-size-h1: clamp(20px, 4vw, 28px);
+$font-size-h2: clamp(18px, 3vw, 24px);
+$font-size-h3: clamp(16px, 2.5vw, 20px);
+$font-size-p: clamp(14px, 2vw, 16px);
+$font-size-small: clamp(12px, 1.8vw, 16px);
+$font-size-smaller: clamp(13px, 1.6vw, 15px);
+$font-size-smallest: clamp(11px, 1.4vw, 14px);
